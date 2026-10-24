@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f4fb" />
+    <meta
+      name="description"
+      content="Discover Unibyte Scientific Club at Open Day. Meet the team, explore the ideas, and register to join us."
+    />
+    <meta property="og:title" content="Unibyte Open Day" />
+    <meta
+      property="og:description"
+      content="A day to meet the minds, see the projects, and find your place at Unibyte."
+    />
+    <meta property="og:type" content="website" />
+    <title>Unibyte Open Day</title>
+    <link rel="icon" type="image/png" href="assets/unibyte-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <div class="paper-art" aria-hidden="true"></div>
+      <div class="page-content">
+        <header class="brand" aria-label="Unibyte Scientific Club">
+          <span class="logo-crop">
+            <img src="assets/unibyte-logo.png" alt="Unibyte logo" />
+          </span>
+          <span class="brand-name">UNIBYTE SCIENTIFIC CLUB</span>
+        </header>
+
+        <section class="intro" aria-labelledby="page-title">
+          <p class="intro-kicker"><span></span> You are invited <span></span></p>
+          <h1 id="page-title"><span>Unibyte</span> <strong>Open Day</strong></h1>
+          <p class="intro-copy">
+            Meet the minds. Explore the ideas.<br class="desktop-break" />
+            Find your place with us.
+          </p>
+        </section>
+
+        <section class="teaser" aria-labelledby="teaser-title">
+          <div class="teaser-heading">
+            <span class="teaser-index">01 / FIRST LOOK</span>
+            <h2 id="teaser-title">A little preview of what’s coming</h2>
+          </div>
+
+          <div class="player-wrap">
+            <div class="player-shadow" aria-hidden="true"></div>
+            <div class="player" id="teaser-player" data-state="placeholder">
+              <video id="teaser-video" preload="metadata" playsinline aria-hidden="true" aria-label="Unibyte Open Day teaser video"></video>
+              <div class="player-vignette" aria-hidden="true"></div>
+              <div class="player-grid" aria-hidden="true"></div>
+              <div class="player-corner player-corner-tl" aria-hidden="true"></div>
+              <div class="player-corner player-corner-tr" aria-hidden="true"></div>
+              <div class="player-corner player-corner-bl" aria-hidden="true"></div>
+              <div class="player-corner player-corner-br" aria-hidden="true"></div>
+
+              <div class="player-topline" aria-hidden="true">
+                <span class="live-dot"></span>
+                UNIBYTE / OPEN DAY
+                <span class="topline-end">TEASER 001</span>
+              </div>
+
+              <div class="player-center" id="player-center">
+                <p class="player-eyebrow">THE STORY BEGINS HERE</p>
+                <button class="play-button" id="play-button" type="button" aria-label="Teaser video coming soon">
+                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2a1 1 0 0 1 1.52-.85l10 6.8a1 1 0 0 1 0 1.7l-10 6.8A1 1 0 0 1 8 18.8V5.2Z"/></svg>
+                  <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                </button>
+                <p class="player-message" id="player-message" role="status">Teaser coming soon</p>
+              </div>
+
+              <div class="player-controls" aria-label="Video controls">
+                <button class="control-button" id="control-play" type="button" aria-label="Play teaser" disabled>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+                </button>
+                <span class="time-label" id="current-time">00:00</span>
+                <input id="progress" class="progress" type="range" min="0" max="1000" value="0" aria-label="Video progress" disabled />
+                <span class="time-label" id="duration">--:--</span>
+                <button class="control-button" id="mute-button" type="button" aria-label="Mute video" disabled>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a8.5 8.5 0 0 1 0 12"/></svg>
+                </button>
+                <button class="control-button" id="fullscreen-button" type="button" aria-label="Enter fullscreen" disabled>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H4a1 1 0 0 0-1 1v4M16 3h4a1 1 0 0 1 1 1v4M3 16v4a1 1 0 0 0 1 1h4m13-5v4a1 1 0 0 1-1 1h-4"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="teaser-note">The teaser will appear here soon. Stay curious.</p>
+        </section>
+
+        <section class="action" aria-label="Register for Open Day">
+          <p>Ready to be part of it?</p>
+          <a class="register-button" href="https://www.unibyteclub.tech/#contact">
+            <span>Register</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+          <span class="action-caption">See you at Unibyte Open Day</span>
+        </section>
+
+        <footer class="footer">
+          <span>UNIBYTE SCIENTIFIC CLUB</span>
+          <span>DISCOVER <span class="footer-star">✦</span> CREATE <span class="footer-star">✦</span> CONNECT</span>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
