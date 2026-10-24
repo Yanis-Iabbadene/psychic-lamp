@@ -343,18 +343,37 @@ h1 strong {
 @media (max-width: 700px) {
   .page { min-height: 100svh; box-shadow: none; }
   .paper-art { background-size: cover; background-position: center center; }
-  .page-content { min-height: 100svh; padding: 27px 24px 25px; }
+  .paper-art::before,
+  .paper-art::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 133.33vw;
+    background: url('assets/paper-background.png') center / 100% 100% no-repeat;
+  }
+  .paper-art::before {
+    top: 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+  }
+  .paper-art::after {
+    bottom: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 54%, #000 86%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 54%, #000 86%, #000 100%);
+  }
+  .page-content { min-height: 100svh; padding: 18px 22px; }
   .logo-crop { width: 113px; height: 88px; }
   .logo-crop img { width: 161px; height: 161px; left: -10px; top: -42px; }
   .brand-name { font-size: 10px; letter-spacing: .15em; }
-  .intro { margin-top: 40px; }
-  .intro-kicker { font-size: 10px; gap: 10px; }
+  .intro { margin-top: 24px; }
+  .intro-kicker { font-size: 10px; gap: 10px; margin-bottom: 8px; }
   .intro-kicker span { width: 19px; }
   h1 { font-size: clamp(45px, 12vw, 67px); }
-  .intro-copy { margin-top: 21px; font-size: 14px; line-height: 1.5; }
+  .intro-copy { margin-top: 14px; font-size: 14px; line-height: 1.5; }
   .desktop-break { display: none; }
-  .teaser { margin-top: 42px; }
-  .teaser-heading { margin-bottom: 18px; }
+  .teaser { margin-top: 26px; }
+  .teaser-heading { margin-bottom: 12px; }
   .teaser-index { font-size: 10px; }
   .teaser h2 { font-size: 18px; }
   .player-wrap { width: min(100%, 310px); }
@@ -376,12 +395,12 @@ h1 strong {
   .control-button { width: 18px; height: 18px; }
   .control-button svg { width: 15px; height: 15px; }
   .time-label { min-width: 29px; font-size: 8px; }
-  .teaser-note { font-size: 11px; margin-top: 18px; }
-  .action { margin-top: 43px; }
-  .action p { font-size: 17px; }
+  .teaser-note { font-size: 11px; margin-top: 12px; }
+  .action { margin-top: 30px; }
+  .action p { font-size: 17px; margin-bottom: 12px; }
   .register-button { min-width: 205px; padding: 17px 25px 17px 33px; font-size: 17px; }
-  .action-caption { font-size: 11px; }
-  .footer { flex-direction: column; gap: 11px; align-items: center; padding-top: 65px; font-size: 8px; }
+  .action-caption { font-size: 11px; margin-top: 18px; }
+  .footer { flex-direction: column; gap: 11px; align-items: center; padding-top: 38px; font-size: 8px; }
 }
 
 @media (max-width: 380px) {
