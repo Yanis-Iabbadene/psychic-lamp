@@ -1,4 +1,3 @@
-
 // Add the teaser file to assets/ and set this path when the video is ready.
 const TEASER_VIDEO_URL = '';
 
@@ -33,7 +32,7 @@ const countdownContainer = document.getElementById('teaser-countdown');
 let countdownInterval = null;
 
 function startCountdown() {
-  // If the countdown elements aren't on this page, safely skip the timer.
+  // Skip the countdown if its HTML elements aren't present.
   if (
     !countdownHours ||
     !countdownMinutes ||
@@ -48,23 +47,30 @@ function startCountdown() {
   try {
     deadline = Number(localStorage.getItem(COUNTDOWN_STORAGE_KEY));
 
-    // Start a new 24-hour countdown if one doesn't exist or has expired.
+    // Start a new countdown if one doesn't exist or has expired.
     if (!Number.isFinite(deadline) || deadline <= Date.now()) {
       deadline = Date.now() + COUNTDOWN_DURATION;
-      localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(deadline));
+      localStorage.setItem(
+        COUNTDOWN_STORAGE_KEY,
+        String(deadline)
+      );
     }
   } catch (error) {
-    // If browser storage is unavailable, use a temporary countdown.
+    // Use a temporary countdown if browser storage is unavailable.
     deadline = Date.now() + COUNTDOWN_DURATION;
   }
 
   function updateCountdown() {
     const remaining = Math.max(0, deadline - Date.now());
 
-    const hours = Math.floor(remaining / (60 * 60 * 1000));
+    const hours = Math.floor(
+      remaining / (60 * 60 * 1000)
+    );
+
     const minutes = Math.floor(
       (remaining % (60 * 60 * 1000)) / (60 * 1000)
     );
+
     const seconds = Math.floor(
       (remaining % (60 * 1000)) / 1000
     );
@@ -87,8 +93,6 @@ function startCountdown() {
         clearInterval(countdownInterval);
         countdownInterval = null;
       }
-
-      return;
     }
   }
 

@@ -109,7 +109,12 @@
 
         <section class="intro" aria-labelledby="page-title">
           <p class="intro-kicker"><span></span> You are invited <span></span></p>
-          <h1 id="page-title"><span>Unibyte</span> <strong>Open Day</strong></h1>
+
+          <h1 id="page-title">
+            <span>Unibyte</span>
+            <strong>Open Day</strong>
+          </h1>
+
           <p class="intro-copy">
             Meet the minds. Explore the ideas.<br class="desktop-break" />
             Find your place with us.
@@ -288,25 +293,32 @@
           <p class="teaser-note">The teaser will appear here soon. Stay curious.</p>
         </section>
 
-        <section class="action" aria-label="Register for Open Day">
+        <section class="action" aria-label="Unibyte links and Open Day registration">
           <p>Ready to be part of it?</p>
 
-          <a class="register-button" href="https://www.unibyteclub.tech/#contact">
-            <span>Register</span>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M5 12h14m-6-6 6 6-6 6" />
+          <a
+            class="register-button"
+            href="https://www.instagram.com/unibyte.cs/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Our Page</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6"/>
             </svg>
           </a>
 
-          <span class="action-caption">See you at Unibyte Open Day</span>
+          <button class="onsite-button" type="button" disabled>
+            <span>Registration at Open Day</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 8v4m0 4h.01"/>
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+          </button>
+
+          <span class="action-caption">
+            Registration takes place on-site. Be there!
+          </span>
         </section>
 
         <footer class="footer">
@@ -320,48 +332,6 @@
       </div>
     </main>
 
-    <!-- NEW: Countdown logic -->
-    <script>
-      (() => {
-        const STORAGE_KEY = "unibyteTeaserCountdownDeadline";
-        const DURATION = 24 * 60 * 60 * 1000;
 
-        // Start a 24-hour countdown and preserve its deadline on this browser.
-        // For the same deadline across ALL visitors, use a fixed release date instead.
-        let deadline = Number(localStorage.getItem(STORAGE_KEY));
-
-        if (!deadline || !Number.isFinite(deadline) || deadline <= Date.now()) {
-          deadline = Date.now() + DURATION;
-          localStorage.setItem(STORAGE_KEY, String(deadline));
-        }
-
-        const hoursElement = document.getElementById("countdown-hours");
-        const minutesElement = document.getElementById("countdown-minutes");
-        const secondsElement = document.getElementById("countdown-seconds");
-        const statusElement = document.getElementById("countdown-status");
-        const countdownElement = document.getElementById("teaser-countdown");
-
-        function updateCountdown() {
-          const remaining = Math.max(0, deadline - Date.now());
-
-          const hours = Math.floor(remaining / (60 * 60 * 1000));
-          const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-          const seconds = Math.floor((remaining % (60 * 1000)) / 1000);
-
-          hoursElement.textContent = String(hours).padStart(2, "0");
-          minutesElement.textContent = String(minutes).padStart(2, "0");
-          secondsElement.textContent = String(seconds).padStart(2, "0");
-
-          if (remaining <= 0) {
-            statusElement.textContent = "The wait is over. Stay tuned!";
-            countdownElement.setAttribute("aria-label", "The countdown has ended");
-            clearInterval(countdownInterval);
-          }
-        }
-
-        updateCountdown();
-        const countdownInterval = setInterval(updateCountdown, 1000);
-      })();
-    </script>
   </body>
 </html>
